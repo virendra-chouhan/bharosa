@@ -23,12 +23,12 @@ repositories {
 	mavenCentral()
 }
 
-docker {
-	name "bharosa"
-	dockerfile file('src/Dockerfile')
-	copySpec.from(jar).rename(".*","test.jar")
-	buildArgs(['JAR_FILE': "test.jar"])
-}
+#docker {
+#	name "bharosa"
+#	dockerfile file('src/Dockerfile')
+#	copySpec.from(jar).rename(".*","test.jar")
+#	buildArgs(['JAR_FILE': "test.jar"])
+#}
 
 dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
