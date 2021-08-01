@@ -23,6 +23,12 @@ repositories {
 	mavenCentral()
 }
 
+docker {
+	name "bharosa"
+	dockerfile file('src/Dockerfile')
+	copySpec.from(jar).rename(".*","bharosa_safecrop_be_0.1-0.0.1-SNAPSHOT.jar")
+	buildArgs(['JAR_FILE': "bharosa_safecrop_be_0.1-0.0.1-SNAPSHOT.jar"])
+}
 
 dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
