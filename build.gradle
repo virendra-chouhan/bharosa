@@ -24,7 +24,7 @@ repositories {
 }
 
 docker {
-	name "bharosa"
+	name "${project.name}:${project.version}"
 	dockerfile file('src/Dockerfile')
 	copySpec.from(jar).rename(".*","bharosa_safecrop_be_0.1-0.0.1-SNAPSHOT.jar")
 	buildArgs(['JAR_FILE': "bharosa_safecrop_be_0.1-0.0.1-SNAPSHOT.jar"])
