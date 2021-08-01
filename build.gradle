@@ -24,12 +24,10 @@ repositories {
 }
 
 docker {
-	name "bharosa.0.01"
+	name "bharosa"
 	dockerfile file('src/Dockerfile')
 	copySpec.from(jar).rename(".*","test.jar")
 	buildArgs(['JAR_FILE': "test.jar"])
-
-
 }
 
 dependencies {
