@@ -2,9 +2,9 @@ plugins {
 	id 'org.springframework.boot' version '2.5.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id "com.palantir.docker" version "0.22.1"
+	
 
-	id "com.palantir.docker-run" version "0.22.1"
+	
 }
 
 
@@ -25,19 +25,7 @@ repositories {
 	mavenCentral()
 }
 
-docker {
-	name "${project.name}:${project.version}"
-	dockerfile file('src/Dockerfile')
-	copySpec.from(jar).rename(".*","bharosa_safecrop_be_0.1-0.0.1-SNAPSHOT.jar")
-	buildArgs(['JAR_FILE': "bharosa_safecrop_be_0.1-0.0.1-SNAPSHOT.jar"])
-}
 
-dockerRun {
-    name "${project.name}"
-    image "${project.name}:${project.version}"
-    ports '3010:3010'
-    clean true
-}
 
 dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
