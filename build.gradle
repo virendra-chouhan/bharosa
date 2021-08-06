@@ -10,7 +10,7 @@ plugins {
 
 group = 'com.bharosa.safecrop.authservice'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '9'
 
 configurations {
 	compileOnly {
